@@ -6,8 +6,6 @@ namespace arithmetic
 
         public static void Main() {
 
-            /*
-
             // 1 task
             int a = 45, b = 78;
             int result = a * b;
@@ -25,11 +23,7 @@ namespace arithmetic
             Console.WriteLine("2 число: " + sNum);
             Console.WriteLine(fNum / sNum);
 
-            */
-
             /* SOME ARITHMETIC EXAMPLES */
-
-            /*
 
             int resOfAr = 2 + 2 * 2;
             Console.WriteLine(resOfAr);
@@ -49,22 +43,14 @@ namespace arithmetic
             int num34 = Convert.ToInt32(inOfFourNum);
             Console.WriteLine((num56 + num34) / num45 + num13);
 
-            */
-
             /* INCREMENT AND DECREMENT*/
-
-            /*
 
             int aPostInc = 0;
             Console.WriteLine(aPostInc++); // first output then increment
             int aPreInc = 0;
             Console.WriteLine(++aPreInc);  // first increment then output
 
-            */
-
             /* EXAMPLES WITH PRE AND POST INCREMENT*/
-
-            /*
 
             int aPreExample = 1;
             aPreExample = ++aPreExample * aPreExample;
@@ -93,11 +79,7 @@ namespace arithmetic
             int numOf4 = Convert.ToInt32(inpNumOfTwo);
             Console.WriteLine(--numOf0 - --numOf4);
 
-            */
-
             /* EXAMPLES OF COMPARE */
-
-            /*
 
             int aOfCompare = 5;
             int bOfCompare = 5;
@@ -113,8 +95,6 @@ namespace arithmetic
             Console.WriteLine("Введите число 1:");
             Console.WriteLine("Введите число 2:");
             Console.WriteLine("{0} меньше или равно {1} - {2}", first_of_LessOrEqual, second_of_LessOrEqual, res_of_LessOrEqual);
-
-            */
 
             /* EXAMPLES OF RANDOM */
 
