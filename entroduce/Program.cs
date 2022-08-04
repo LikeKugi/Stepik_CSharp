@@ -69,10 +69,12 @@ public class MainClass
         string variable1 = "34";    
         int number12 = int.Parse(variable1); //PARSE only convert from string
         Console.WriteLine(number12);
+        /*
         int a = int.Parse(Console.ReadLine()); //PARSE from console input
         // But it makes warning
         Console.WriteLine("input = " + a);
-
+        */
+        
         // 9 task
         string asking = "?";
         char sign = char.Parse(asking);
