@@ -11,8 +11,6 @@ namespace MyProgram
 
             /* SWITCH EXAMPLE */
 
-            /*
-
             string? a = Console.ReadLine();
 
             switch (a)
@@ -40,8 +38,6 @@ namespace MyProgram
                         Console.WriteLine("Вы ввели неизвестное мне значение!");
                     break;
                 }
-
-            */
 
             // 1 task
 
