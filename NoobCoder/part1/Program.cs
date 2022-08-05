@@ -40,6 +40,10 @@ namespace MyProgram
             Console.WriteLine("Введите два целых числа через пробел"); 
             string? line = " ";
             line = Console.ReadLine();
+            if (line == null)
+            {
+                line = " ";
+            }
             string[] splitString = line.Split(' ');
 
             int x1 = Convert.ToInt32(splitString[0]);
@@ -53,6 +57,10 @@ namespace MyProgram
             // num task with area
             Console.WriteLine("Введите два числа через пробел: длина и ширина стола");
             line = Console.ReadLine();
+            if (line == null)
+            {
+                line = " ";
+            }
             splitString = line.Split(' ');
 
             double length = Convert.ToDouble(splitString[0]); // длина
@@ -67,7 +75,10 @@ namespace MyProgram
 
             // 10 --> 16
             line = Console.ReadLine(); // ввод числа в десятеричной системе 
-
+            if (line == null)
+            {
+                line = " ";
+            }
             int xInp = int.Parse(line);
 
             string answer;
