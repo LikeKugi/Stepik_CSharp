@@ -8,7 +8,7 @@ namespace MyProgram
         {
         // Main starts here
             Console.Clear();
-/*
+
             // 1 task
             string? inpt_num = Console.ReadLine();
             if (inpt_num == null) {
@@ -22,7 +22,7 @@ namespace MyProgram
                 Console.WriteLine(i1);
                 sum_don += ++i1;
             }
-*/
+
             // 2 task 
             // ебаный говнокод (6j-1)||(6j+1) пиздец СЛОЖНА проверить!
             // StackOverflow onelove <3
