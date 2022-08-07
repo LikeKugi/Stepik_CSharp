@@ -8,7 +8,7 @@ namespace MyProgram
         {
         // Main starts here
             Console.Clear();
-
+/*
             // 1 task
             string? inpt_num = Console.ReadLine();
             if (inpt_num == null) {
@@ -22,10 +22,11 @@ namespace MyProgram
                 Console.WriteLine(i1);
                 sum_don += ++i1;
             }
-
+*/
             // 2 task 
             // ебаный говнокод (6j-1)||(6j+1) пиздец СЛОЖНА проверить!
             // StackOverflow onelove <3
+            Console.WriteLine("=================start==================");
             string? inpt_value = Console.ReadLine();
             if (inpt_value == null) {
                 inpt_value = "1";
@@ -41,19 +42,35 @@ namespace MyProgram
             bool flag;
             for (int i = startValue; i <= endValue; i++){
                 flag = true;
+                
                 if (i > 1) {
-                    for (int j = 2; j < i; j++) 
+                    if ((i == 2) || (i == 3) || (i == 5) ||(i == 7)) {
+                        sum += i;
+                        continue;
+                    }
+
+                    if ((i % 2 == 0) || (i % 3 == 0)) {
+                    continue;
+                    }
+
+                    Console.Write($"i = {i}; ");
+
+                    for (int j = 1; (j * j) <= i; j++) 
                     {
-                        if (i % j == 0) {
-                            flag = false;
-                            break;
+                        if ((i % (6 * j - 1) == 0) || (i % ( 6 * j + 1) == 0)) {
+                            if ((i != (6 * j - 1)) && (i != (6 * j + 1))){
+                                flag = false;
+                                break;
+                            }
                         }
                         Console.WriteLine($"i = {i}; j = {j}; flag = {flag}; mod = {i % j}");
+                    }
 
-                    }
-                    if ((flag == true) && (i > 0)) {
-                        sum += i;
-                    }
+                    if (flag == true) {
+                            sum += i;
+                        Console.WriteLine($"i = {i}; sum = {sum}");
+                        }
+                    
                 }
             }
             Console.WriteLine($"Сумма простых чисел = {sum}");
