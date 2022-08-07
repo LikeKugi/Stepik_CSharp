@@ -44,16 +44,17 @@ namespace MyProgram
                 flag = true;
                 
                 if (i > 1) {
-                    if ((i == 2) || (i == 3) || (i == 5) ||(i == 7)) {
+                    if ((i == 2) || (i == 3)) {
                         sum += i;
                         continue;
                     }
 
                     if ((i % 2 == 0) || (i % 3 == 0)) {
-                    continue;
+                        continue;
                     }
 
-                    Console.Write($"i = {i}; ");
+                    Console.WriteLine("-------------------------------------");
+                    Console.WriteLine($"checking i = {i}; ");
 
                     for (int j = 1; (j * j) <= i; j++) 
                     {
@@ -63,12 +64,12 @@ namespace MyProgram
                                 break;
                             }
                         }
-                        Console.WriteLine($"i = {i}; j = {j}; flag = {flag}; mod = {i % j}");
+                        Console.WriteLine($"i = {i}; j = {j}; flag = {flag}");
                     }
 
                     if (flag == true) {
                             sum += i;
-                        Console.WriteLine($"i = {i}; sum = {sum}");
+                        Console.WriteLine($"Prime number i = {i}; sum = {sum}");
                         }
                     
                 }
