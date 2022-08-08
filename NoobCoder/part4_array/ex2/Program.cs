@@ -50,6 +50,39 @@ namespace MyProgram
 
             // 2 task
             // find min/max and reverse
+            string? cardNumber = Console.ReadLine();
+            if (cardNumber == null) {
+                cardNumber = "13452546";
+            }
+            char[] cd_nmdr = cardNumber.ToCharArray();
+            int[] card_array = new int[cd_nmdr.Length];
+
+            for (int i = 0; i < cd_nmdr.Length; i++) {
+                card_array[i] = (int)(cd_nmdr[i] - '0'); // char to int
+                Console.Write($"{card_array[i]} <== {cd_nmdr[i]}; ");
+            }
+            Console.WriteLine();
+            int max = card_array[0];
+            int min = card_array[0];
+
+            foreach (int el in card_array) {
+                if (el > max) {
+                    max = el;
+                } else if (el < min) {
+                    min = el;
+                }
+            }
+
+            int[] outpt_card_number = new int[card_array.Length+2];
+            for (int i = 0; i < card_array.Length; i ++) {
+                outpt_card_number[i] = card_array[card_array.Length-1-i];
+            }
+            outpt_card_number[card_array.Length] = max;
+            outpt_card_number[card_array.Length + 1] = min;
+
+            foreach(int el in outpt_card_number) {
+                Console.Write(el);
+            }
 
         }
     }
