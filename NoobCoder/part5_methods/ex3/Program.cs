@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class MainClass
 {   
-    // write an array of numbers divided by 7 
+    // write an array of numbers that are divider to 7 
     // arr[index]: index += 2
     public static int GetNumbers(){
         int number;
