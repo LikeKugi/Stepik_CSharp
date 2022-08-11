@@ -18,14 +18,12 @@ public class MainClass
 
     public static void VasyaStyle(int number){
         int a, b, c;
-        List<int> ArrA = new List<int>();
         for (a = 2; a < Math.Sqrt(number); a++) {
             if (ValidCheck(a)){
-                ArrA.Add(a);
                 for (b = 2; b <= (number / a); b++) {
                     if (ValidCheck(b)) {
                         c = number - (a * b);
-                        if (ValidCheck(c) && ValCheckB(b, ArrA)) {
+                        if (ValidCheck(c) && (b >= a)) {
                             Console.WriteLine($"{number} = {a} * {b} + {c}");
                         }
                     }
@@ -59,16 +57,6 @@ public class MainClass
                     continue;
             }
         }
-        return true;
-    }
-
-    private static bool ValCheckB (int number, List<int> arrOfA) {
-        foreach (int el in arrOfA) {
-            if (el == number) {
-                return false;
-            }
-        }
-        
         return true;
     }
 
