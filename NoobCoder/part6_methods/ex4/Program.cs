@@ -11,16 +11,16 @@ namespace MyProgram
             foreach (int el in sortArr){
                 Console.Write(el + " ");
             }
-            //Console.WriteLine();
+            Console.WriteLine();
             for (int i = 1; i < sortArr.Length; i++) {
                 sortArr[i] += sortArr[i-1];
             }
             foreach (int el in sortArr){
                 Console.Write(el + " ");
             }
-            //Console.WriteLine();
+            Console.WriteLine();
             int min = System.Linq.Enumerable.Min(sortArr);
-            //Console.WriteLine(min);
+            Console.WriteLine(min);
             
             for (int i = 0; i < sortArr.Length; i++) {
                 sortArr[i] += minValue - min;
