@@ -18,6 +18,8 @@ internal class Program
     private static void GetindexOfChar()
     {
         string? inptStr = Console.ReadLine();
+        if (string.IsNullOrEmpty(inptStr))
+            inptStr = "5";
 
         List<char> chars = new List<char>(inptStr.Length);
         foreach (char c in inptStr)
