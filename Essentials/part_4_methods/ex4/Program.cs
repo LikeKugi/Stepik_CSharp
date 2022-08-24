@@ -16,12 +16,32 @@ namespace MyProgram
     class Task 
     {
 	// пиши код метода CheckPairs здесь
+    //TODO: rewrite!!!
         public static void CheckPairs(string line, char open, char close)
         {
-            if (line.IndexOf(open) >= line.Substring(line.IndexOf(open)).LastIndexOf(close))
-                Console.WriteLine("Найдены ошибки");
-            else
+            var counter = 0;
+            foreach (char el in line)
+            {
+                if (el == open)
+                {
+                    counter++;
+                }   else if (el == close)
+                    {
+                        counter--;
+                    }
+                if (counter < 0)
+                {
+                    break;
+                }
+            }
+            if (counter == 0)
+            {
                 Console.WriteLine("Все в порядке");
+            }   else
+                {
+                    Console.WriteLine("Найдены ошибки");
+                }
+            
         }
     }
 }
