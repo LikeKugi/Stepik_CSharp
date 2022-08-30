@@ -9,7 +9,7 @@ namespace MyProgram
             // Main starts here
             Console.Clear();
 
-            var inptline = Console.ReadLine().Split(' ').ToArray();;
+            var inptline = Console.ReadLine()!.Split(' ').ToArray();;
             var man = new Vasya(inptline[0], Convert.ToInt32(inptline[1]));
             var a = new Vasya("Василий",123);
             var b = new Vasya("Василий",12);
