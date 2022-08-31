@@ -9,9 +9,9 @@ namespace MyProgram
             // Main starts here
             Console.Clear();
 
-            var salary = new Money("10", "р.", "26", "коп.");
+            var salary = new Money("10", "р.", "25", "коп.");
             salary.Print();
-            var salary2 = new Money("10", "р.", "25", "коп.");
+            var salary2 = new Money("12", "р.", "10", "коп.");
             salary2.Print();
 
             var c = Money.Sum(salary, salary2);
@@ -21,7 +21,7 @@ namespace MyProgram
             d.Print();
 
             var e = new Money("10", "р.", "15", "коп.");
-            e.PrintTransferCost(0.70);
+            e.PrintTransferCost(0.05);
         }
     }
 
@@ -38,7 +38,7 @@ namespace MyProgram
                 _BreakMissing();
             else
                     if ((Convert.ToInt32(nRoub) < 0) || (Convert.ToInt32(nKop) < 0))
-                _BreakNegative();
+                        _BreakNegative();
             else
                 Creating(nRoub, sRoub, nKop, sKop);
         }
@@ -106,7 +106,7 @@ namespace MyProgram
             }
         }
         //--------------------------------------------------------------------------
-        private void _BreakNegative() => Console.WriteLine("Не может быть отрицательным!");
+        private void _BreakNegative() => throw new ArgumentException ("Не может быть отрицательным!");
         private void _BreakMissing() => Console.WriteLine("Рубли и копейки перепутаны местами!");
 
         public void Print()
@@ -122,8 +122,14 @@ namespace MyProgram
             double countTaxes = this.roubles * 100 + this.kopejki;
             countTaxes *= (1 + tax);
             var roublesTax = (int)(countTaxes / 100);
-            var kopejkiTax = (int)(Math.Round(countTaxes) % 100);
-            Console.WriteLine(string.Join(" ", roublesTax, this.sRoub, kopejkiTax, this.sKop));
+            var kopejkiTax = (int)(Math.Ceiling(countTaxes) % 100);
+            if (roublesTax != 0)
+                Console.WriteLine("{0} {1} {2} {3}", roublesTax, this.sRoub, kopejkiTax, this.sKop);
+            else
+                Console.WriteLine("{0} {1}", kopejkiTax, this.sKop);
+            //
+            //Console.WriteLine(string.Join(" ", roublesTax, this.sRoub, kopejkiTax, this.sKop));
+            //
         }
 
         public static Money Sum(Money a, Money b)
@@ -131,17 +137,20 @@ namespace MyProgram
             var rb = a.roubles + b.roubles;
             var kp = a.kopejki + b.kopejki;
             var c = new Money(rb.ToString(), "р.", kp.ToString(), "коп.");
-            c.Print();
             return c;
         }
 
         public static Money Difference(Money a, Money b)
         {
 
-            var rb = (a.roubles >= b.roubles) ? (a.roubles - b.roubles) : (b.roubles - a.roubles);
-            var kp = (a.kopejki >= b.kopejki) ? (a.kopejki - b.kopejki) : (b.kopejki - a.kopejki);
+            var rb = a.roubles - b.roubles;
+            var kp = a.kopejki - b.kopejki;
+            if(kp <0 )
+            {
+                rb--;
+                kp += 100;
+            }
             var c = new Money(rb.ToString(), "р.", kp.ToString(), "коп.");
-            c.Print();
             return c;
         }
     }
